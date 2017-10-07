@@ -67,18 +67,9 @@ function generateInput() {
         };
         arr.push(obj);
 
-        for (let i = 5; i < numberOfTestcases; i++) {
-            input = generateInput();
-            temp = randomNumber(0, input.length);
-            obj = {
-                "input": input,
-                "target": input[temp],
-                "output": temp
-            };
-            arr.push(obj);
-        }
+
     }
-    }
+  }
     writeFile(filePath, arr);
     return arr;
 
