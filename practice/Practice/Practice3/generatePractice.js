@@ -21,17 +21,17 @@ function generateInput() {
         //Empty array
         let obj = {
             "input": [],
-            "target": randomInt(-10000, 10000),
+            "target": randomNumber(-10000, 10000),
             "output": -1
         };
         arr.push(obj);
 
         //Not found
         let input = generateInput();
-        let temp = randomInt(-10000, 10000);
+        let temp = randomNumber(-10000, 10000);
         while (input.indexOf(temp) !== -1)
         {
-          temp = randomInt(-10000, 10000);
+          temp = randomNumber(-10000, 10000);
         }
         obj = {
             "input": input,
@@ -69,7 +69,7 @@ function generateInput() {
 
         for (let i = 5; i < numberOfTestcases; i++) {
             input = generateInput();
-            temp = randomInt(0, input.length);
+            temp = randomNumber(0, input.length);
             obj = {
                 "input": input,
                 "target": input[temp],
