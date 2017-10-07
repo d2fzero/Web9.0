@@ -8,8 +8,7 @@ function search(input, target) {
       return -1;
     }
 
-    if (!input.length) {
-      return -1;
+
     }
     for (let i = 0; i < input.length; i++) {
       if (input[i] === target) {
