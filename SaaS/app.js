@@ -56,19 +56,12 @@ app.post('/question',(req,res) => {
     no:0,
     id:id++
   }
-  // console.log(questionList);
   questionList.push(newQuestion);
   fileController.writeDataToFile(outputFileName,questionList);
-  // app.use('/question', questionRouter);
   res.redirect('/questionLast');
-  // questionRouter.get('/${id}')
-  // console.log(`/question/${id}`);
-  // res.redirect(`/question/${id}`);
+
 })
 
-//
-// router.get('/ask/question');
-// router.get('/ask/postabout');
 
 app.listen(6969, (err) => {
   if (err) {
