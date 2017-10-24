@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const exhbs = require('express-handlebars');
-const outputFileName = "question.json";
-const fileController = require('./fileController');
-const viewRouter = require('./viewRouter');
-const questionRouter = require('./questionRouter');
+
+const viewRouter = require('./router/viewRouter');
+const questionRouter = require('./router/questionRouter');
+const mongoose = require('mongoose');
 
 let app = express();
-let id =0
+
 app.engine("handlebars", exhbs({ defaultLayout : "main"}));
 app.set("view engine", "handlebars");
 
@@ -26,42 +26,17 @@ app.get('/about', (req, res) => {
   res.render("about");
 });
 
-// app.use('/ask', viewRouter);
-app.get('/ask', (req, res) => {
-  res.render("ask");
-});
+app.use('/ask', viewRouter);
+
 app.use('/question', questionRouter);
-app.get('/questionLast',(req,res) => {
-  let questionList = fileController.readDataFromFile(outputFileName);
-  let question = questionList[questionList.length-1];
-  res.render("question",
-    {question: question.question,
-      yes:question.yes,
-      no:question.no
-      // layout = "test"
-  });
-})
 
-app.post('/question',(req,res) => {
-  let questionList = [];
-  try{
-    questionList = fileController.readDataFromFile(outputFileName);
-  } catch(ex){
-    console.log(ex);
-    questionList = [];
+mongoose.connect("mongodb://localhost/quyetde", (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("connect db success");
   }
-  let newQuestion = {
-    question : req.body.question,
-    yes:0,
-    no:0,
-    id:id++
-  }
-  questionList.push(newQuestion);
-  fileController.writeDataToFile(outputFileName,questionList);
-  res.redirect('/questionLast');
-
-})
-
+});
 
 app.listen(6969, (err) => {
   if (err) {

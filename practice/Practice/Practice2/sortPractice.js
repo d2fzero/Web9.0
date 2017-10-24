@@ -9,6 +9,7 @@ function sort(input) {
   input[j] = count;
   }
   return input;
+}
 
 
 module.exports = sort

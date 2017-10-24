@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="ask.css">
-    <title></title>
-  </head>
-  <body>
-    <form class = "form" action="/question" method="post">
-      <label class = "label">Question  </label><input class = "text" type="text" name="question" value=""/>
-      <input class = "submit" type="submit" value="Submit"/>
-    </form>
-  
-  </body>
-</html>
+
+<form method="post" action="/question">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Hãy hỏi cộng đồng một câu hỏi đúng sai/có không</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows=5></textarea>
+    <p> còn 200/200 kí tự </p>
+   <button type="submit" class="btn btn-primary">Gửi</button>
+  </div>
+</form>

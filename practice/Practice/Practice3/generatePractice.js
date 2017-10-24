@@ -69,10 +69,10 @@ function generateInput() {
 
 
     }
-  }
+
     writeFile(filePath, arr);
     return arr;
-
+  s}
 }
 
 module.exports = generate
