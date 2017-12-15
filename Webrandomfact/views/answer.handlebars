@@ -1,0 +1,18 @@
+<form method="post" action="/api/answers/like" >
+
+            {{#each data }}
+            <div class="form-check">
+                  <p>Name: {{username}}</p>
+                  <p>Answer: {{answer}}</p>
+                  <img width="100px" height="100px"src={{userAvatar}}  class="img-fluid">
+
+                  <p>Like: {{like}}</p>
+                  <!-- <p>{{idAnswer}}</p> -->
+            <button type="submit" class="btn btn-primary" name="Like" value="{{idAnswer}}">Like</button>
+            </div>
+            {{/each}}
+
+    <!-- <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div> -->
+</form>
