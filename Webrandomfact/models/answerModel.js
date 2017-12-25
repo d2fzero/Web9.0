@@ -8,7 +8,7 @@ const answerModel = new Schema({
   answer:{type:String,require:true},
   idQuestion:{type:ObjectId,ref:'questions',require:true},
   idUser:{type:ObjectId,ref:'users',require:true},
-  like:{type:Number,default:0},
+  like:{type:Array,default:[]},
    });
 
 module.exports = mongoose.model('answers', answerModel);

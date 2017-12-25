@@ -1,5 +1,4 @@
 const questionModel=require('../models/questionModel');
-
 const getQuestionList =(callback)=>{
   questionModel.distinct('question',(err,result)=>{
     let questionList=result;

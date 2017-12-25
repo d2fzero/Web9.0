@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
-
 router.get('/sighup',(req,res)=>{
     res.render('sighup');
 });
-
 router.post('/', (req, res) => {
   usersController.createUser(req.body, (err, data) => {
     if (err)

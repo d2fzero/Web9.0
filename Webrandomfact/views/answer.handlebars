@@ -1,18 +1,36 @@
-<form method="post" action="/api/answers/like" >
+<form method="post" action="/api/answers/like" id="answer_form" onload="checkLike()">
 
             {{#each data }}
-            <div class="form-check">
-                  <p>Name: {{username}}</p>
-                  <p>Answer: {{answer}}</p>
-                  <img width="100px" height="100px"src={{userAvatar}}  class="img-fluid">
 
-                  <p>Like: {{like}}</p>
-                  <!-- <p>{{idAnswer}}</p> -->
-            <button type="submit" class="btn btn-primary" name="Like" value="{{idAnswer}}">Like</button>
+         <div class="form-check">
+            <div class="row blockquote review-item">
+              <div class="col-md-2 text-right" >
+                <img width="70px" height="70px"  class="rounded-circle reviewer" src={{userAvatar}}>
+                <div class="caption ">
+
+                </div>
+
+              </div>
+              <div class="col-md-5">
+                <h6>Đáp án của {{username}}</h6>
+                <div class="ratebox text-center" data-id="0" data-rating="5"></div>
+                <div class="alert alert-primary" role="alert">{{answer}}</div>
+
+
+                  {{like}} <i class="fa fa-thumbs-up "style="font-size:30px;color:blue;"  ></i>
+                <div class="text-right" >
+                    {{#if liked}}
+                   <button type="submit" class="btn btn-secondary" disabled name="Like" value="{{idAnswer}}">Like</button>
+                 {{else}}
+                   <button type="submit" class="btn btn-primary" name="Like" value="{{idAnswer}}">Like</button>
+                 {{/if}}
             </div>
+
+              </div>
+            </div>
+          </div>
+
             {{/each}}
 
-    <!-- <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div> -->
+
 </form>

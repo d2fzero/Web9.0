@@ -13,26 +13,35 @@ router.post('/add',(req,res)=>{
     }
   });
 });
+
 router.post('/like',(req,res)=>{
-answerController.updateLikeAnswer(req.body.Like,(err,doc)=>{
+answerController.updateLikeAnswer(req.body.Like,req.cookies.userId,(err,doc)=>{
   res.redirect(`/api/answers/${doc.idQuestion}`);
 })
-console.log("aaa");
-console.log(req.body.Like);
 })
 router.get('/:id', (req, res) => {
 let answerList =answerController.getAllCookAnswerByIdQuestion(req.params.id,answerList=>{
-    // console.log(answerList);
-    // // console.log(req.params.id);
-    // console.log(answerList)
+
   let data =  answerList.map((answerList)=>{
+    if(answerList.like.indexOf(req.cookies.userId)==-1)
+    return {
+      idAnswer:answerList._id,
+      idQuestion:answerList.idQuestion,
+      answer:answerList.answer,
+      username:answerList.idUser.username,
+      userAvatar:answerList.idUser.userAvatar,
+      like:answerList.like.length,
+      liked:false,
+    }
+    else
       return {
         idAnswer:answerList._id,
         idQuestion:answerList.idQuestion,
         answer:answerList.answer,
         username:answerList.idUser.username,
         userAvatar:answerList.idUser.userAvatar,
-        like:answerList.like,
+        like:answerList.like.length,
+        liked:true,
       }
     })
     res.render("answer",{data:data});

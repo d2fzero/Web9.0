@@ -1,11 +1,12 @@
-<h2 class="mt-3">Hãy trả lời câu hỏi của RandomFact</h2>
-<h2 class="text-center mt-5"name="question">{{question}}</h2>
+
+<h1 class="text-center mt-5"name="question">{{question}}</h1>
 <div class="form-group">
-  <a>Câu trả lời</a>
+<br>
+<br>
 </div>
 <form  method="post" action="/api/answers/add">
   <div class="form-group">
-    <textarea class="form-control" name="answer"rows="2" ></textarea>
+    <textarea class="form-control" name="answer"rows="2"placeholder="Hãy nghĩ ra một câu trả lời hay nhất có thể.Câu trả lời đúng nhất là câu trả lời có nhiều like nhất" ></textarea>
     <button type="submit" class="btn btn-primary">Send</button>
   </div>
 </form>
