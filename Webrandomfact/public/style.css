@@ -2,129 +2,84 @@
   margin-bottom: 50px
 }
 .dropdown{
-  margin-right: 50px
+  margin-right: 100px
 }
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-
-
+.container{
+  right :100px
 }
-#login-dp .help-block{
-    font-size:12px
+.form-signin
+{
+    width: 270px;
+    padding: 15px;
+    margin: 0 auto;
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
     margin-bottom: 10px;
 }
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
+.form-signin .checkbox
+{
+    font-weight: normal;
 }
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
+.form-signin .form-control:focus
+{
+    z-index: 2;
 }
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom
-
-
-.reviews{
-  padding: 15px;
-  max-width: 768px;
-  margin: 0 auto;
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
-
-.review-item{
-  background-color: white;
-  padding: 15px;
-  margin-bottom: 5px;
-  box-shadow: 1px 1px 5px #343a40;
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
-.review-item .review-date{
-  color: #cecece;
-}
-.review-item .review-text{
-  font-size: 16px;
-  font-weight: normal;
-  margin-top: 5px;
-  color: #343a40;
-}
-
-.review-item .reviewer{
-  width: 100px;
-  height: 100px;
-  border: 1px solid #cecece;
-}
-
-/****Rating Stars***/
-.raterater-bg-layer {
-    color: rgba( 0, 0, 0, 0.25 );
-}
-.raterater-hover-layer {
-    color: rgba( 255, 255, 0, 0.75 );
-}
-.raterater-hover-layer.rated { /* after the user selects a rating */
-    color: rgba( 255, 255, 0, 1 );
-}
-.raterater-rating-layer {
-    color: rgba( 255, 155, 0, 0.75 );
-}
-.raterater-outline-layer {
-    color: rgba( 0, 0, 0, 0.25 );
-}
-
-/* don't change these - you might break something.. */
-.raterater-wrapper {
-    overflow:visible;
-}
-
-.software .raterater-wrapper {
-    margin-top: 4px;
-}
-
-.raterater-layer,
-.raterater-layer i {
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
     display: block;
-    position: absolute;
-    overflow: visible;
-    top: 0px;
-    left: 0px;
 }
-.raterater-hover-layer {
-    display: none;
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
-.raterater-hover-layer i,
-.raterater-rating-layer i {
-    width: 0px;
-    overflow: hidden;
+.need-help
+{
+    margin-top: 10px;
 }
-.fa-thumbs-up {
-  color: blue;
+.new-account
+{
+
+    margin-top: 10px;
+  text-align: center;
 }
