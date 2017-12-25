@@ -1,0 +1,9 @@
+{
+  "production":{
+    "connectionString":"",
+  },
+  "development":{
+      "connectionString":"mongodb://localhost/",
+      "port" :6969
+  }
+}
