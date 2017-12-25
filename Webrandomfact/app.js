@@ -8,7 +8,13 @@ const apiAnswer=require('./routers/apiAnswersRouter');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const mongoose=require('mongoose');
+const config = require('./config.json');
+
 let app = express();
+let connectionString = process.env.PORT ? config.production.connectionString : config.development.connectionString;
+
+let port = process.env.PORT ? process.env.PORT : config.development.port;
+
 app.engine("handlebars", handlebars({ defaultLayout : "main"}));
 app.set("view engine", "handlebars");
 app.use(session({
@@ -26,18 +32,18 @@ app.use('/api/questions',apiQuestion);
 app.use('/api/answers',apiAnswer);
 // app.use('/add',addRouter);
 app.use(express.static(__dirname + '/public'));
-mongoose.connect("mongodb://localhost/fact", (err) => {
+mongoose.connect(connectionString, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("Connect db success");
+    console.log("connect db success");
   }
 });
 
-app.listen(6969, (err) => {
+app.listen(port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log("Localhost started on port 6969");
+    console.log("Website is up");
   }
 });

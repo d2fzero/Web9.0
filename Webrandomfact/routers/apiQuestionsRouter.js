@@ -3,7 +3,7 @@ const router=express.Router();
 const questionController=require('../controllers/questionsController');
 
 router.get('/add',(req,res)=>{
-    res.render('Question');
+    res.render('question');
 });
 router.post('/add',(req,res)=>{
   questionController.createQuestion(req.body, (err, data) => {

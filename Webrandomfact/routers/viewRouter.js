@@ -5,14 +5,19 @@ const questionController=require('../controllers/questionsController');
 
 router.get('/', (req, res) => {
   let question = questionController.getRandomQuestion((question) => {
+    if(question){
+      res.cookie("questionId",question._id);
+      res.render(
+        "home",
+        {
+          question: question.question,
+        }
+      );
+    }
+    else{
+      res.redirect("/api/questions/add");
+    }
 
-    res.cookie("questionId",question._id);
-    res.render(
-      "home",
-      {
-        question: question.question,
-      }
-    );
   });
   // console.log("user id cookie:",req.cookies.userId);
   // // console.log("aaadd");

@@ -22,7 +22,8 @@ const getRandomQuestion = (callback) => {
   questionModel.find({}, (err, questionList) => {
     let randomId = Math.floor(Math.random() * questionList.length);
     let question = questionList[randomId];
-    question.id = randomId;
+    // TODO question id set truoc trong db chu khong set tren controller nhe
+    // question.id = randomId;
     callback(question);
   });
 }

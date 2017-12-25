@@ -45,6 +45,7 @@ let answerList =answerController.getAllCookAnswerByIdQuestion(req.params.id,answ
       }
     })
     res.render("answer",{data:data});
+    
 })
 });
 module.exports=router;
